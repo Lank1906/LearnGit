@@ -1,0 +1,52 @@
+-- Cấu hình
+git config --global user.name "Your Name"          # Đặt tên người dùng
+git config --global user.email "youremail@example.com"  # Đặt email
+git config --list                                  # Hiển thị cấu hình hiện tại
+
+-- Khởi tạo
+git init                                           # Khởi tạo Git repository mới
+git clone <repository-url>                         # Clone một repository từ GitHub
+
+-- Quản lý file
+git status                                         # Kiểm tra trạng thái repository
+git add <file>                                     # Thêm file vào staging area
+git add .                                          # Thêm tất cả các file vào staging area
+git rm --cached <file>                             # Xóa file khỏi staging nhưng giữ trên hệ thống
+git mv <old> <new>                                 # Đổi tên hoặc di chuyển file
+
+-- Commit
+git commit -m "Message"                            # Tạo một commit với thông điệp
+git commit --amend                                 # Sửa đổi commit gần nhất
+
+-- Branch
+git branch                                         # Liệt kê các nhánh
+git branch <branch-name>                           # Tạo nhánh mới
+git checkout <branch-name>                         # Chuyển sang nhánh khác
+git checkout -b <branch-name>                      # Tạo và chuyển sang nhánh mới
+git merge <branch-name>                            # Gộp nhánh khác vào nhánh hiện tại
+git branch -d <branch-name>                        # Xóa nhánh đã merge
+git branch -D <branch-name>                        # Xóa nhánh mà không cần merge
+
+-- Remote respo
+git remote add origin <repository-url>             # Liên kết repository cục bộ với remote
+git remote -v                                      # Hiển thị remote repository
+git fetch origin                                   # Lấy dữ liệu mới từ remote nhưng không merge
+git pull                                           # Lấy dữ liệu mới từ remote và merge
+git push                                           # Đẩy dữ liệu lên remote
+git push -u origin <branch-name>                   # Thiết lập nhánh chính
+
+-- Lịch sử
+git log                                            # Xem lịch sử commit
+git log --oneline                                  # Xem lịch sử ngắn gọn
+git log --graph --oneline --all                    # Hiển thị dạng đồ thị
+git diff                                           # Xem thay đổi chưa được staged
+git diff --staged                                  # Xem thay đổi đã được staged
+
+-- push
+git push origin <branch-name>
+
+-- merge
+git merge <branch-name>                            # Merge nhánh (có thể gây xung đột)
+# Chỉnh sửa xung đột trong file theo yêu cầu
+git add <file>                                     # Thêm file đã chỉnh sửa vào staging
+git commit                                         # Hoàn thành việc giải quyết xung đột
